@@ -1,3 +1,4 @@
+// 袁梓锋 能够成功使用git
 #include "main.h"
 #define LEFT_FRONT_WHEELS_PORT 1
 #define RIGHT_FRONT_WHEELS_PORT 10
@@ -113,8 +114,8 @@ void opcontrol() {
         int power = master.get_analog(ANALOG_LEFT_Y);
         // 获取右摇杆的X轴值，用于控制转向
         int turn = master.get_analog(ANALOG_RIGHT_X);
-        int left = power + turn;
-        int right = power - turn;  
+        int left = 2 * (power + turn);
+        int right = 2 * (power - turn);  
         left_front_wheel.move(left);
         right_front_wheel.move(right);
         left_rear_wheel.move(left);
